@@ -1,0 +1,95 @@
+<body>
+<link
+
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+
+<!-- The navigation menu -->
+<div class="navbar">
+  <div class="subnav">
+    <button class="subnavbtn" (click)="undo()" [disabled]="!isUndo">
+      Undo
+    </button>
+    <i class="fa fa-undo " aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="undo()" ></i>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn" (click)="redo()" [disabled]="!isRedo">
+      Redo
+    </button>
+    <i class="fa fa-repeat " aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="redo()" ></i>
+  </div>
+  <div class="subnav">..............................................................</div>
+  <div class="subnav">
+    <button class="subnavbtn" (click)="Delete()">Erase</button>
+    <i class="fa fa-eraser"  aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="Delete()" ></i>
+  </div>
+
+  <div class="subnav">
+    <button class="subnavbtn" (click)="Copy()">Copy</button>
+    <i class="fa fa-files-o" aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="Copy()" ></i>
+
+  </div>
+
+
+  <div class="subnav">
+    <button class="subnavbtn" (click)="clearScreen()">Clear</button>
+    <i class="fa fa-trash" aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="clearScreen()" ></i>
+  </div>
+  <div class="subnav">......................................................................................................................</div>
+
+  <div class="subnav">
+    <button class="subnavbtn" (click)="saveToBack()">
+      Save
+    </button>
+    <i class="fa fa-floppy-o" aria-hidden="true"aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="saveToBack()" ></i>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn" (click)="loadData()">Load</button>
+    <i class="fa fa-clipboard" aria-hidden="true"style="font-size:35px;color:rgb(187, 162, 162)"(click)="loadData()" ></i>
+  </div>
+</div>
+<div class="sidebar">
+  Tool:
+  <select id="tool"style="font-size:25px;color:#5f71bc">
+    <option value="brush"(click)="freehand()"style="font-size:25px;color:#5f71bc">Brush</option>
+    <option value="eraser"style="font-size:25px;color:#5f71bc">Eraser</option>
+  </select>
+  <div class="sidebarbutton" (click)="Shape('square')">
+    Square
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('rectangle')">
+    Rectangle <i class="fa-regular"></i>
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('circle')">
+    Circle <i class="fa-sharp fa-solid fa-triangle"></i>
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('pentagon')">
+    Pentagon
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('hexagon')">
+    Hexagon
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('triangle')">
+    Triangle
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('ellipse')">
+    Ellipse
+  </div>
+
+  <div class="sidebarbutton" (click)="Shape('line')">
+    Line
+  </div>
+  <input type="color" id="colorChoice" (click)="recolour()" value="#e66465"/>
+
+</div>
+
+<div id="container"></div>
+</body>
